@@ -6,6 +6,7 @@ import { LoggerMiddleware } from './logger/logger.middleware';
 import {TypeOrmModule} from "@nestjs/typeorm"
 import {Users} from './users/entities/user.entities';
 import { AuthModule } from './auth/auth.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -19,6 +20,7 @@ import { AuthModule } from './auth/auth.module';
     synchronize: true, // for production mode this property is false
   }),
   TypeOrmModule.forFeature([Users]),
+  ProductsModule,
   UsersModule,
   AuthModule,
 ],

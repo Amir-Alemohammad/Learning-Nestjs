@@ -13,7 +13,7 @@ export class AuthController {
   }
   @Post("login")
   login(@Body() loginDto: LoginDto){
-      return "salam"
+      return this.authService.login(loginDto);
   }
 
 }

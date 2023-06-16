@@ -16,7 +16,7 @@ export class Users{
     @Column({length:25,nullable:true})
     lastname: string
 
-    @Column({select:false,nullable:false})
+    @Column({nullable:false})
     password: string;
 
     @Column({nullable:true})
