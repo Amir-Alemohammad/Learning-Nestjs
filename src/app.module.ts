@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { LoggerMiddleware } from './logger/logger.middleware';
 import {TypeOrmModule} from "@nestjs/typeorm"
-import {Users} from './users/entities/user.entities';
+import {Users} from './users/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
 import { ProductsModule } from './products/products.module';
+import { Products } from './products/entities/product.entity';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -16,7 +17,7 @@ import { ProductsModule } from './products/products.module';
     username: "postgres",
     password: "amir13848431",
     database: "postgres",
-    entities: [__dirname + '/**/*.entities{.ts,.js}'],
+    entities: [__dirname + '/**/*.entity{.ts,.js}'],
     synchronize: true, // for production mode this property is false
   }),
   TypeOrmModule.forFeature([Users]),
